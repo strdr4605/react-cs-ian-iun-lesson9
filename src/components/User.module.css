@@ -31,3 +31,9 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.name {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
