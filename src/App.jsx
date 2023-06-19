@@ -1,11 +1,11 @@
 import { Users } from "./components/Users";
 import "./App.css";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <h1>Lesson9</h1>
-      <div>Hello</div>
+      <Navbar />
       <Users />
     </>
   );
