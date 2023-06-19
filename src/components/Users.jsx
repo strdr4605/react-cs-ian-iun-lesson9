@@ -11,13 +11,10 @@ export function Users() {
   useEffect(() => {
     async function getAllUsers() {
       const { data: usersData } = await axios.get(API_URL);
-      // console.log(usersData);
       const { data: usersData2 } = await axios.get(API_URL + "?page=2");
-      // console.log(usersData2);
 
       const allUsers = [...usersData.data, ...usersData2.data];
 
-      console.log(allUsers);
       setUsers(allUsers);
     }
 
