@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import styles from "./Users.module.css";
 import { User } from "./User";
 
@@ -9,16 +10,11 @@ export function Users() {
 
   useEffect(() => {
     async function getAllUsers() {
-      const usersData = await fetch(API_URL).then((res) => res.json());
-      // console.log(usersData);
-      const usersData2 = await fetch(API_URL + "?page=2").then((res) =>
-        res.json()
-      );
-      // console.log(usersData2);
+      const { data: usersData } = await axios.get(API_URL);
+      const { data: usersData2 } = await axios.get(API_URL + "?page=2");
 
       const allUsers = [...usersData.data, ...usersData2.data];
 
-      console.log(allUsers);
       setUsers(allUsers);
     }
 
