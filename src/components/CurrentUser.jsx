@@ -1,7 +1,9 @@
 import styles from "./CurrentUser.module.css";
+import { useUserContext } from "../context/userContext";
 
-export function CurrentUser(props) {
-  const { user } = props;
+export function CurrentUser() {
+  const userContext = useUserContext();
+  const user = userContext.selectedUser;
 
   if (!user) {
     return <div>No user</div>;
