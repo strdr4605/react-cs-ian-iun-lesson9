@@ -1,7 +1,12 @@
 import styles from "./User.module.css";
 
 export function User(props) {
-  const { user } = props;
+  const { user, onUserSelect } = props;
+
+  const handleOnClick = () => {
+    onUserSelect(user);
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.left_side}>
@@ -11,8 +16,10 @@ export function User(props) {
         </a>
       </div>
       <div className={styles.right_side}>
-        <span>{user.first_name}</span>
-        <span>{user.last_name}</span>
+        <div className={styles.name} onClick={handleOnClick}>
+          <span>{user.first_name}</span>
+          <span>{user.last_name}</span>
+        </div>
       </div>
     </div>
   );
