@@ -1,3 +1,5 @@
+import styles from "./CurrentUser.module.css";
+
 export function CurrentUser(props) {
   const { user } = props;
 
@@ -5,5 +7,10 @@ export function CurrentUser(props) {
     return <div>No user</div>;
   }
 
-  return <div>Current user: {user.first_name}</div>;
+  return (
+    <div className={styles.container}>
+      {user.first_name}
+      <img className={styles.current_avatar} src={user.avatar} />
+    </div>
+  );
 }

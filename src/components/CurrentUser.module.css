@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.current_avatar {
+  width: 50px;
+  border-radius: 50%;
+}

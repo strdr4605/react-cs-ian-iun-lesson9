@@ -12,10 +12,14 @@ function App() {
     setSelectedUser(user);
   };
 
+  const filteredUsers = selectedUser
+    ? users.filter((user) => user.id !== selectedUser.id)
+    : users;
+
   return (
     <>
       <Navbar currentUser={selectedUser} />
-      <Users users={users} onUserSelect={onUserSelect} />
+      <Users users={filteredUsers} onUserSelect={onUserSelect} />
     </>
   );
 }
