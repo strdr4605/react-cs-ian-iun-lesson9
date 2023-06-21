@@ -1,10 +1,13 @@
+import { useUserContext } from "../context/userContext";
 import styles from "./User.module.css";
 
 export function User(props) {
-  const { user, onUserSelect } = props;
+  const { user } = props;
+
+  const { setSelectedUser } = useUserContext();
 
   const handleOnClick = () => {
-    onUserSelect(user);
+    setSelectedUser(user);
   };
 
   return (
