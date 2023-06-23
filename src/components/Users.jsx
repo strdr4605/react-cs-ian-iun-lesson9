@@ -1,11 +1,10 @@
 import styles from "./Users.module.css";
 import { User } from "./User";
-import { useUserContext } from "../context/userContext";
+import { useUsersContext } from "../context/usersContext";
 
-export function Users(props) {
-  const { users } = props;
-
-  const { selectedUser } = useUserContext();
+export function Users() {
+  const { state } = useUsersContext();
+  const { selectedUser, users } = state;
 
   const filteredUsers = selectedUser
     ? users.filter((user) => user.id !== selectedUser.id)

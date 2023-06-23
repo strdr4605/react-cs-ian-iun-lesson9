@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 const API_URL = "https://reqres.in/api/users";
 
-export function useUsers() {
-  const [users, setUsers] = useState([]);
+export function useUsers(setUsers) {
+  const [users, setInternalUsers] = useState([]);
 
   useEffect(() => {
     async function getAllUsers() {
@@ -13,6 +13,7 @@ export function useUsers() {
 
       const allUsers = [...usersData.data, ...usersData2.data];
 
+      setInternalUsers(allUsers);
       setUsers(allUsers);
     }
 

@@ -2,19 +2,18 @@ import { Users } from "./components/Users";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { useUsers } from "./hooks/useUsers";
-import { UserProvider } from "./context/userContext";
+import { UsersProvider } from "./context/usersContext";
+import { Counter, CounterWithReducer } from "./components/Counter";
 
 function App() {
-  const users = useUsers();
-
-  
-
   return (
     <>
-      <UserProvider>
+      {/* <Counter />
+      <CounterWithReducer /> */}
+      <UsersProvider>
         <Navbar />
-        <Users users={users} />
-      </UserProvider>
+        <Users />
+      </UsersProvider>
     </>
   );
 }
