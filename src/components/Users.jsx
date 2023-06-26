@@ -13,7 +13,7 @@ export function Users() {
   return (
     <div className={styles.container}>
       {filteredUsers.length > 0 ? (
-        filteredUsers.map((user) => <User key={user.id} user={user} />)
+        filteredUsers.map((user) => <User key={user.id} userId={user.id} />)
       ) : (
         <h3>Loading users</h3>
       )}
